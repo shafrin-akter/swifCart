@@ -2,3 +2,14 @@
   color: #4f39f6;
   font-weight: 600;
 }
+/* Focused (keyboard tab / clicked) */
+.nav-link:focus {
+  color: #4f39f6;
+  font-weight: 600;
+  outline: none; /* optional */
+}
+
+/* Hover effect */
+.nav-link:hover {
+  color: #4f39f6;
+}
