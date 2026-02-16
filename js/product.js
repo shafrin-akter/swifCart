@@ -241,3 +241,21 @@ const toggleAllButton = () => {
 };
 
 loadCetegoryBtn();
+
+// menu active
+const links = document.querySelectorAll(".nav-link");
+const currentPath = window.location.pathname;
+links.forEach((link) => {
+  const linkUrl = new URL(link.href, window.location.origin);
+
+  if (linkUrl.pathname === currentPath) {
+    link.classList.add("text-[#4F39F6]", "font-semibold");
+  }
+});
+
+const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});

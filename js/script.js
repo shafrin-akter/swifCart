@@ -8,6 +8,14 @@ links.forEach((link) => {
     link.classList.add("text-[#4F39F6]", "font-semibold");
   }
 });
+
+const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
 // menu active end
 
 // tranding product
