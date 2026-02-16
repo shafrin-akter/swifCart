@@ -8,7 +8,6 @@ links.forEach((link) => {
     link.classList.add("text-[#4F39F6]", "font-semibold");
   }
 });
-
 // menu active end
 
 // tranding product
@@ -18,19 +17,6 @@ const tradingProduct = () => {
     .then((res) => res.json())
     .then((data) => displayTrandingProduct(data));
 };
-
-// {
-//     "id": 17,
-//     "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-//     "price": 39.99,
-//     "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-//     "category": "women's clothing",
-//     "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
-//     "rating": {
-//         "rate": 3.8,
-//         "count": 679
-//     }
-// }
 
 const displayTrandingProduct = (products) => {
   const trandingContainer = document.getElementById("tranding-container");
@@ -89,6 +75,8 @@ const displayTrandingProduct = (products) => {
   });
 };
 
+// tanding product end
+
 // product modal js
 const productDetail = (id) => {
   const url = `https://fakestoreapi.com/products/${id}`;
@@ -96,19 +84,6 @@ const productDetail = (id) => {
     .then((res) => res.json())
     .then((data) => displayDetailProduc(data));
 };
-
-// {
-//     "id": 3,
-//     "title": "Mens Cotton Jacket",
-//     "price": 55.99,
-//     "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-//     "category": "men's clothing",
-//     "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
-//     "rating": {
-//         "rate": 4.7,
-//         "count": 500
-//     }
-// }
 
 const displayDetailProduc = (detail) => {
   const modalConatiler = document.getElementById("product_dtail_modal");
@@ -154,4 +129,3 @@ const displayDetailProduc = (detail) => {
 // product modal js end
 
 tradingProduct();
-// tanding product end
