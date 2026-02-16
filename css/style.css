@@ -13,3 +13,7 @@
 .nav-link:hover {
   color: #4f39f6;
 }
+.active-btn {
+  background-color: #4f39f6;
+  color: white;
+}
