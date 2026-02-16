@@ -1,15 +1,9 @@
-// Select all nav links
+// menu active
 const links = document.querySelectorAll(".nav-link");
-
-// Get full current path, e.g. "/product.html" or "/contact/index.html"
 const currentPath = window.location.pathname;
-
-// Loop through each nav link
 links.forEach((link) => {
-  // Create absolute URL object from href
   const linkUrl = new URL(link.href, window.location.origin);
 
-  // If pathname matches current page, add active classes
   if (linkUrl.pathname === currentPath) {
     link.classList.add("text-[#4F39F6]", "font-semibold");
   }
