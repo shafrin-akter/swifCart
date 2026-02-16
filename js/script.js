@@ -20,7 +20,7 @@ const tradingProduct = () => {
 
 const displayTrandingProduct = (products) => {
   const trandingContainer = document.getElementById("tranding-container");
-  // trandingContainer.innerHTML = "";
+  trandingContainer.innerHTML = "";
 
   const topRated = products
     .sort((a, b) => b.rating.rate - a.rating.rate)
