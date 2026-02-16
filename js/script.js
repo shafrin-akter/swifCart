@@ -20,7 +20,7 @@ const tradingProduct = () => {
 
 const displayTrandingProduct = (products) => {
   const trandingContainer = document.getElementById("tranding-container");
-  trandingContainer.innerHTML = "";
+  // trandingContainer.innerHTML = "";
 
   const topRated = products
     .sort((a, b) => b.rating.rate - a.rating.rate)
@@ -82,10 +82,10 @@ const productDetail = (id) => {
   const url = `https://fakestoreapi.com/products/${id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayDetailProduc(data));
+    .then((data) => displayDetailProduct(data));
 };
 
-const displayDetailProduc = (detail) => {
+const displayDetailProduct = (detail) => {
   const modalConatiler = document.getElementById("product_dtail_modal");
   modalConatiler.innerHTML = `
     <div class="modal-box">
@@ -125,7 +125,6 @@ const displayDetailProduc = (detail) => {
   `;
   document.getElementById("product_dtail_modal").showModal();
 };
-
 // product modal js end
 
 tradingProduct();
