@@ -116,7 +116,6 @@ const displayDetailProduct = (detail) => {
 // product modal js end
 
 tradingProduct();
-
 // menu active
 const links = document.querySelectorAll(".nav-link");
 const currentPath = window.location.pathname;
