@@ -15,7 +15,7 @@ const displayCategroyBtn = (btns) => {
   for (btn of btns) {
     const safeId = getSafeId(btn);
     categoryBtn.innerHTML += `
-           <button id="category-btn-${btn}" onclick="productShowCategory(\`${btn}\`)" class="btn btn-outline rounded-full cetegroy-btn">${btn}</button>
+           <button id="category-btn-${btn}" onclick="productShowCategory(\`${btn}\`)" class="btn btn-outline rounded-full cetegroy-btn">${btn.toUpperCase()}</button>
         `;
   }
 };
@@ -23,6 +23,7 @@ const displayCategroyBtn = (btns) => {
 // product category Btn end
 // product card display
 const productCard = () => {
+  manageSpinner(true);
   const url = "https://fakestoreapi.com/products";
   fetch(url)
     .then((res) => res.json())
@@ -82,6 +83,8 @@ const displayProductCard = (products) => {
 
     `;
     productCarDiv.appendChild(cardDiv);
+
+    manageSpinner(false);
   });
 };
 // product card display end
@@ -138,7 +141,7 @@ const displayDetailProduct = (detail) => {
 
 // product category filter
 const productShowCategory = (category) => {
-  console.log(category);
+  manageSpinner(true);
   const url = `https://fakestoreapi.com/products/category/${category}`;
   fetch(url)
     .then((res) => res.json())
@@ -207,6 +210,7 @@ const filterCategroy = (products) => {
 
     `;
     productCarDiv.appendChild(cardDiv);
+    manageSpinner(false);
   });
 };
 // product category filter end
@@ -239,6 +243,20 @@ const toggleAllButton = () => {
   // always show all products
   productCard();
 };
+
+// loading spinner
+
+const manageSpinner = (status) => {
+  if (status === true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("product-container").classList.add("hidden");
+  } else {
+    document.getElementById("product-container").classList.remove("hidden");
+    document.getElementById("spinner").classList.add("hidden");
+  }
+};
+
+// // loading spinner end
 
 loadCetegoryBtn();
 
